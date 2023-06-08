@@ -6,30 +6,33 @@ window.addEventListener("load", function () {
   // Define the grid size
   var gridSize = { rows: 10, columns: 10 };
 
-  // Create the animation
-  var animation = spinAnimation(originalImage, gridSize);
+  // Wait for the image to load
+  originalImage.addEventListener("load", function () {
+    // Create the animation
+    var animation = spinAnimation(originalImage, gridSize);
 
-  // Get the container element
-  var container = document.querySelector(".container");
+    // Get the container element
+    var container = document.querySelector(".container");
 
-  // Add the animation frames to the container
-  for (var row = 0; row < gridSize.rows; row++) {
-    for (var col = 0; col < gridSize.columns; col++) {
-      // Create a square element
-      var square = document.createElement("div");
-      square.className = "square";
+    // Add the animation frames to the container
+    for (var row = 0; row < gridSize.rows; row++) {
+      for (var col = 0; col < gridSize.columns; col++) {
+        // Create a square element
+        var square = document.createElement("div");
+        square.className = "square";
 
-      // Create an image element for each square
-      var image = document.createElement("img");
-      image.src = animation.src;
+        // Create an image element for each square
+        var image = document.createElement("img");
+        image.src = animation.src;
 
-      // Append the image to the square
-      square.appendChild(image);
+        // Append the image to the square
+        square.appendChild(image);
 
-      // Append the square to the container
-      container.appendChild(square);
+        // Append the square to the container
+        container.appendChild(square);
+      }
     }
-  }
+  });
 });
 
 function spinAnimation(image, gridSize) {
