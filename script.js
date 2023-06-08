@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
   // Load the original image
   var originalImage = new Image();
-  originalImage.src = "path_to_your_image.png";
+  originalImage.src = "panda500.png";
 
   // Define the grid size
   var gridSize = { rows: 10, columns: 10 };
