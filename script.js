@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
   // Load the original image
   var originalImage = new Image();
-  originalImage.src = "panda500.png";
+  originalImage.src = "path_to_your_image.png";
 
   // Define the grid size
   var gridSize = { rows: 10, columns: 10 };
@@ -67,4 +67,7 @@ function spinAnimation(image, gridSize) {
 
   // Create a new image element from the canvas
   var animation = new Image();
-  animation.src = canvas.toDataURL
+  animation.src = canvas.toDataURL();
+
+  return animation;
+}
